@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User_result</title>
+
+</head>
+<body>
+<table>
+    <tr>
+        <th th:text="#{from.user.label.name}"></th>
+        <th th:text="#{from.user.label.surname}"></th>
+        <th th:text="#{from.user.label.country}"></th>
+        <th th:text="#{from.user.label.city}"></th>
+        <th th:text="#{from.user.label.adres}"></th>
+        <th th:text="#{from.user.label.tel}"></th>
+        <th th:text="#{from.user.label.email}"></th>
+        <th th:text="#{from.user.label.userId}"></th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <th th:text="${user.name}"></th>
+        <th th:text="${user.surname}"></th>
+        <th th:text="${user.country}"></th>
+        <th th:text="${user.city}"></th>
+        <th th:text="${user.adres}"></th>
+        <th th:text="${user.tel}"></th>
+        <th th:text="${user.email}"></th>
+        <th th:text="${user.userId}"></th>
+    </tr>
+</table>
+
+
+</body>
+</html>

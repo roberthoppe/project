@@ -20,11 +20,17 @@ public class IndexController {
     @PostMapping("/user")
     public String userPost(UserPOJO userPOJO){
         userService.save(userPOJO);
-        return "user";
+        return "redirect:/users";
     }
     @GetMapping
     public String user(Model model) {
         model.addAttribute("user", new UserPOJO());
         return "user";
     }
+    @GetMapping("/users")
+    public String userInfo(Model model){
+        model.addAttribute("users",userService.getUser());
+        return "user_result";
+    }
+
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>User</title>
@@ -7,29 +7,29 @@
 <body>
 <form th:action="@{/user}" th:object="${user}" method="post">
     
-    <div th:text="#{from.user.label.name} + ':'"></div>
+    <div th:text="#{form.user.label.name }+ ':'"></div>
     <input type="text" th:field="*{name}" autocomplete="off">
 
-    <div th:text="#{from.user.label.surname} + ':'"></div>
+    <div th:text="#{form.user.label.surname} + ':'"></div>
     <input type="text" th:field="*{surname}" autocomplete="off">
 
-    <div th:text="#{from.user.label.adres} + ':'"></div>
+    <div th:text="#{form.user.label.adres} + ':'"></div>
     <input type="text" th:field="*{adres}" autocomplete="off">
     
-    <div th:text="#{from.user.label.city} + ':'"></div>
+    <div th:text="#{form.user.label.city} + ':'"></div>
     <input type="text" th:field="*{city}" autocomplete="off">
     
-    <div th:text="#{from.user.label.email} + ':'"></div>
+    <div th:text="#{form.user.label.email} + ':'"></div>
     <input type="text" th:field="*{email}" autocomplete="off">
     
-    <div th:text="#{from.user.label.tel} + ':'"></div>
+    <div th:text="#{form.user.label.tel} + ':'"></div>
     <input type="number" th:field="*{tel}" autocomplete="off">
 
-    <div th:text="#{from.user.label.country} + ':'"></div>
+    <div th:text="#{form.user.label.country} + ':'"></div>
     <input type="text" th:filed="*{country}" autocomplete="off">
 
 
-    <input type="submit" th:value="#{from.label.submit}">
+    <input type="submit" th:value="#{form.label.submit}">
 </form>
 
 </body>
