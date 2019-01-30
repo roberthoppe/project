@@ -22,11 +22,11 @@ public class IndexController {
     @PostMapping("user")
     public String userPost(@Valid @ModelAttribute("user") UserPOJO userPOJO, Model model){
         userService.save(userPOJO);
-        return "redirect:/user";
+        return "user";
     }
-    @GetMapping("user")
-    public String getAllInfo(Model model){
-        model.addAttribute("user",userService.getUser());
-        return "user_result";
-    }
+//    @GetMapping("user")
+//    public String getAllInfo(Model model){
+//        model.addAttribute("user",userService.getUser());
+//        return "user";
+//    }
 }
