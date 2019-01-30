@@ -10,13 +10,14 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@NotNull
 
 public class UserPOJO {
 
     private UUID userId;
 
+    @NotNull
     private String name;
+    @NotNull
     private String surname;
     private String adres;
     private String city;

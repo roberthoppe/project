@@ -20,16 +20,17 @@ public class UserService {
     public List<UserPOJO> getUser(){
     return userRepository.findAll().stream().map(this::map).collect(Collectors.toList());
     }
+    public void save(UserPOJO userPOJO){
+    userRepository.save(map(userPOJO));
+    }
 
 
     public User map(UserPOJO userPOJO){
-    User user = new User(userPOJO.getUserId(),userPOJO.getName(),userPOJO.getSurname(),userPOJO.getAdres(),userPOJO.getCity(),
+    return new User(userPOJO.getUserId(),userPOJO.getName(),userPOJO.getSurname(),userPOJO.getAdres(),userPOJO.getCity(),
             userPOJO.getCountry(),userPOJO.getEmail(),userPOJO.getTel());
-    return user;
     }
     public UserPOJO map(User user){
-    UserPOJO userPOJO = new UserPOJO(user.getUserId(),user.getName(),user.getSurname(),user.getAdres(),user.getCity(),
+    return new UserPOJO(user.getUserId(),user.getName(),user.getSurname(),user.getAdres(),user.getCity(),
             user.getCountry(),user.getEmail(),user.getTel());
-    return userPOJO;
     }
 }
