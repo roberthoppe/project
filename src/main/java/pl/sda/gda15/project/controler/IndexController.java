@@ -5,8 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.sda.gda15.project.model.UserPOJO;
 import pl.sda.gda15.project.service.UserService;
+
 
 
 @Controller
@@ -28,9 +30,15 @@ public class IndexController {
         return "user";
     }
     @GetMapping("/users")
-    public String userInfo(Model model){
+    public String usersInfo(Model model){
         model.addAttribute("users",userService.getUser());
         return "user_result";
     }
+//    @GetMapping("/user")
+//    public  String userInfo(Model model, @RequestParam("id") UUID userId){
+//        UserPOJO user = userService.getUser(userId);
+//        model.addAttribute("user",user);
+//        return "user";
+//    }
 
 }

@@ -8,16 +8,16 @@
 <body>
 <table>
     <tr>
-        <th th:text="#{from.user.label.name}"></th>
-        <th th:text="#{from.user.label.surname}"></th>
-        <th th:text="#{from.user.label.country}"></th>
-        <th th:text="#{from.user.label.city}"></th>
-        <th th:text="#{from.user.label.adres}"></th>
-        <th th:text="#{from.user.label.tel}"></th>
-        <th th:text="#{from.user.label.email}"></th>
-        <th th:text="#{from.user.label.userId}"></th>
+        <th th:text="#{form.user.label.name}"></th>
+        <th th:text="#{form.user.label.surname}"></th>
+        <th th:text="#{form.user.label.country}"></th>
+        <th th:text="#{form.user.label.city}"></th>
+        <th th:text="#{form.user.label.adres}"></th>
+        <th th:text="#{form.user.label.tel}"></th>
+        <th th:text="#{form.user.label.email}"></th>
+        <th th:text="#{form.user.label.userId}"></th>
     </tr>
-    <tr th:each="user : ${users}">
+    <tr th:each=" user : ${users}">
         <th th:text="${user.name}"></th>
         <th th:text="${user.surname}"></th>
         <th th:text="${user.country}"></th>
@@ -25,7 +25,10 @@
         <th th:text="${user.adres}"></th>
         <th th:text="${user.tel}"></th>
         <th th:text="${user.email}"></th>
-        <th th:text="${user.userId}"></th>
+        <th>
+            <a th:href="@{'/user?id=' + ${user.userId}}" th:text="${user.userId}"></a>
+        </th>
+
     </tr>
 </table>
 
