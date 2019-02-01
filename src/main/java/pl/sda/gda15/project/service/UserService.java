@@ -19,24 +19,24 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+
     public List<UserPOJO> getUser(){
     return userRepository.findAll().stream().map(this::map).collect(Collectors.toList());
+    }
+    public UserPOJO getUser(UUID uuid){
+    return map(userRepository.getOne(uuid));
     }
     public void save(UserPOJO userPOJO){
     userRepository.save(map(userPOJO));
     }
 
-
     public User map(UserPOJO userPOJO){
     return new User(userPOJO.getUserID(),userPOJO.getName(),userPOJO.getSurname(),userPOJO.getAdres(),userPOJO.getCity(),
-            userPOJO.getCountry(),userPOJO.getEmail(),userPOJO.getTel());
+            userPOJO.getCountry(),userPOJO.getEmail(),userPOJO.getTel(),null);
     }
     public UserPOJO map(User user){
     return new UserPOJO(user.getUserId(),user.getName(),user.getSurname(),user.getAdres(),user.getCity(),
-            user.getCountry(),user.getEmail(),user.getTel());
+            user.getCountry(),user.getEmail(),user.getTel(),null);
     }
 
-    public UserPOJO getUser(UUID userId) {
-    return map(userRepository.getOne(userId));
-    }
 }

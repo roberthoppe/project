@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -23,5 +24,6 @@ public class UserPOJO {
     private String country;
     private String email;
     private Long tel;
+    private List<OrderPOJO>orderList;
 
 }

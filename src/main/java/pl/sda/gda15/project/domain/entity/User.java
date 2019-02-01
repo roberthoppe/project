@@ -8,6 +8,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -27,6 +29,8 @@ public class User {
     private String country;
     private String email;
     private Long tel;
+    @OneToMany(mappedBy = "user")
+    private List<Order>orderList;
 
 
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -15,6 +16,5 @@ import java.util.UUID;
 public class OrderPOJO {
 
     private UUID orderId;
-    private List<ProductPOJO> productPOJOList;
-
+    private Date orderData;
 }
