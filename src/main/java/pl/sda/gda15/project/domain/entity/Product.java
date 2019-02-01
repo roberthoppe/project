@@ -8,6 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.util.UUID;
 
 @Data
@@ -21,4 +22,6 @@ public class Product {
     private UUID id;
     private String productName;
     private Long quantity;
+    @ManyToOne
+    private Order order;
 }
