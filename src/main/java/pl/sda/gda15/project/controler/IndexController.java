@@ -4,21 +4,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.sda.gda15.project.model.ProductPOJO;
 import pl.sda.gda15.project.model.UserPOJO;
 import pl.sda.gda15.project.service.ProductService;
 import pl.sda.gda15.project.service.UserService;
 
+import java.util.UUID;
+
 
 @Controller
 public class IndexController {
     private final UserService userService;
-    private final ProductService productService;
 
 
-    public IndexController(UserService userService, ProductService productService) {
+    public IndexController(UserService userService) {
         this.userService = userService;
-        this.productService = productService;
     }
 
     @PostMapping("/user")
@@ -39,23 +40,12 @@ public class IndexController {
         return "user_result";
     }
 
-    //    @GetMapping("/user")
+//        @GetMapping("/user")
 //    public  String userInfo(Model model, @RequestParam("userId") UUID userId){
 //        UserPOJO user = userService.getUser(userId);
 //        model.addAttribute("user",user);
 //        return "user";
-//    }
+//   }
 
-    @GetMapping("/product")
-    public String product(Model model) {
-        model.addAttribute("product", new ProductPOJO());
-        return "product";
-    }
-
-    @GetMapping("/products")
-    public String products(Model model) {
-        model.addAttribute("products", productService.allProducts());
-        return "products";
-    }
 
 }

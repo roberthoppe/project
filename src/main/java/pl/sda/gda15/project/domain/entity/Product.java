@@ -20,5 +20,5 @@ public class Product {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
     private String productName;
-    private Integer quantity;
+    private Long quantity;
 }

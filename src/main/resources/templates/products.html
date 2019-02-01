@@ -8,12 +8,12 @@
 
 <table>
     <tr>
-        <th th:text="#{form.products.productname}"></th>
-        <th th:text="#{form.products.quantity}"></th>
+        <th th:text="#{form.product.productname}"></th>
+        <th th:text="#{form.product.quantity}"></th>
         <th th:text="#{form.product.productsId}"></th>
     </tr>
     <tr th:each=" product : ${products}">
-        <th th:text="${product.productId}"></th>
+        <th th:text="${product.productName}"></th>
         <th th:text="${product.quantity}"></th>
         <th th:text="${product.productId}"></th>
 

@@ -15,5 +15,5 @@ public class ProductPOJO {
     private UUID productId;
 
     private String productName;
-    private Integer quantity;
+    private Long quantity;
 }

@@ -22,6 +22,6 @@ public class UserPOJO {
     private String city;
     private String country;
     private String email;
-    private Integer tel;
+    private Long tel;
 
 }

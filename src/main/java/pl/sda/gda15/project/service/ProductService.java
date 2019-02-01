@@ -7,23 +7,31 @@ import pl.sda.gda15.project.domain.repository.ProductRepository;
 import pl.sda.gda15.project.model.ProductPOJO;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
-@Autowired
+
+    @Autowired
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
 
     }
-    public List<ProductPOJO> allProducts(){
-    return productRepository.findAll().stream().map(this::map).collect(Collectors.toList());
+    public void save(ProductPOJO productPOJO) {
+        productRepository.save(map(productPOJO));
     }
-    public Product map(ProductPOJO productPOJO){
-    return new Product(productPOJO.getProductId(),productPOJO.getProductName(),productPOJO.getQuantity());
+
+    public List<ProductPOJO> allProducts() {
+        return productRepository.findAll().stream().map(this::map).collect(Collectors.toList());
     }
-    public ProductPOJO map(Product product){
-    return new ProductPOJO(product.getId(), product.getProductName(), product.getQuantity());
+
+    public Product map(ProductPOJO productPOJO) {
+        return new Product(productPOJO.getProductId(), productPOJO.getProductName(), productPOJO.getQuantity());
+    }
+
+    public ProductPOJO map(Product product) {
+        return new ProductPOJO(product.getId(), product.getProductName(), product.getQuantity());
     }
 }
