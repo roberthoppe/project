@@ -40,21 +40,22 @@ public class IndexController {
     }
 
     //    @GetMapping("/user")
-//    public  String userInfo(Model model, @RequestParam("id") UUID userId){
+//    public  String userInfo(Model model, @RequestParam("userId") UUID userId){
 //        UserPOJO user = userService.getUser(userId);
 //        model.addAttribute("user",user);
 //        return "user";
 //    }
-//    @GetMapping
-//    public String product(Model model) {
-//        model.addAttribute("product", new ProductPOJO());
-//        return "product";
-//    }
-//
-//    @GetMapping("/products")
-//    public String products(Model model) {
-//        model.addAttribute("products", productService.allProducts());
-//        return "product_result";
-//    }
+
+    @GetMapping("/product")
+    public String product(Model model) {
+        model.addAttribute("product", new ProductPOJO());
+        return "product";
+    }
+
+    @GetMapping("/products")
+    public String products(Model model) {
+        model.addAttribute("products", productService.allProducts());
+        return "products";
+    }
 
 }

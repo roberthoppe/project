@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public class UserPOJO {
 
-    private UUID userId;
+    private UUID userID;
 
     private String name;
     private String surname;

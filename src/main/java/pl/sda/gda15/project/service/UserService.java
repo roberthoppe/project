@@ -28,7 +28,7 @@ public class UserService {
 
 
     public User map(UserPOJO userPOJO){
-    return new User(userPOJO.getUserId(),userPOJO.getName(),userPOJO.getSurname(),userPOJO.getAdres(),userPOJO.getCity(),
+    return new User(userPOJO.getUserID(),userPOJO.getName(),userPOJO.getSurname(),userPOJO.getAdres(),userPOJO.getCity(),
             userPOJO.getCountry(),userPOJO.getEmail(),userPOJO.getTel());
     }
     public UserPOJO map(User user){

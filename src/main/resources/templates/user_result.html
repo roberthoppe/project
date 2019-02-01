@@ -26,7 +26,7 @@
         <th th:text="${user.tel}"></th>
         <th th:text="${user.email}"></th>
         <th>
-            <a th:href="@{'/user?id=' + ${user.userId}}" th:text="${user.userId}"></a>
+            <a th:href="@{'/user?id=' + ${user.getUserID}}" th:text="${user.getUserID}"></a>
         </th>
 
     </tr>
