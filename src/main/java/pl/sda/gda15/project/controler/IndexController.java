@@ -1,5 +1,6 @@
 package pl.sda.gda15.project.controler;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import pl.sda.gda15.project.model.UserPOJO;
 import pl.sda.gda15.project.service.ProductService;
 import pl.sda.gda15.project.service.UserService;
 
+import javax.persistence.ManyToOne;
 import java.util.UUID;
 
 
@@ -39,13 +41,14 @@ public class IndexController {
         model.addAttribute("users", userService.getUser());
         return "user_result";
     }
+    @GetMapping("/user_result")
+    public String userInfo(Model model,@RequestParam("id") UUID userId){
+        UserPOJO userPOJO = userService.getUser(userId);
+        model.addAttribute("user",userPOJO);
+        model.addAttribute("order",userPOJO.getOrderList());
+        return "/user_result";
+    }
 
-//        @GetMapping("/user")
-//    public  String userInfo(Model model, @RequestParam("userId") UUID userId){
-//        UserPOJO user = userService.getUser(userId);
-//        model.addAttribute("user",user);
-//        return "user";
-//   }
 
 
 }
