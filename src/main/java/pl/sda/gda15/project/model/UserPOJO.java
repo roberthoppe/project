@@ -11,11 +11,11 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
+
 
 public class UserPOJO {
 
-    private UUID userID;
+    private UUID userId;
 
     private String name;
     private String surname;
@@ -24,6 +24,6 @@ public class UserPOJO {
     private String country;
     private String email;
     private Long tel;
-    private List<OrderPOJO>orderList;
+    private List<OrderPOJO> orderList;
 
 }

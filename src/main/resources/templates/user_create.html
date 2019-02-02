@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Create</title>
+</head>
+<body>
+<form th:action="@{/create}" th:object="${user_creat}" method="post">
+
+    <div th:text="#{form.user.label.name }+ ':'"></div>
+    <input type="text" th:field="*{name}" autocomplete="off">
+
+    <div th:text="#{form.user.label.surname} + ':'"></div>
+    <input type="text" th:field="*{surname}" autocomplete="off">
+
+    <div th:text="#{form.user.label.adres} + ':'"></div>
+    <input type="text" th:field="*{adres}" autocomplete="off">
+
+    <div th:text="#{form.user.label.city} + ':'"></div>
+    <input type="text" th:field="*{city}" autocomplete="off">
+
+    <div th:text="#{form.user.label.email} + ':'"></div>
+    <input type="text" th:field="*{email}" autocomplete="off">
+
+    <div th:text="#{form.user.label.country} + ':'"></div>
+    <input type="text" th:field="*{country}" autocomplete="off">
+
+    <div th:text="#{form.user.label.tel} + ':'"></div>
+    <input type="number" th:field="*{tel}" autocomplete="off">
+
+
+
+    <input type="submit" th:value="#{form.label.submit}">
+</form>
+
+</body>
+</html>

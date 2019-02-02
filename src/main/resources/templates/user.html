@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>User</title>
 </head>
 <body>
-<form th:action="@{/user}" th:object="${user}" method="post">
-    
-    <div th:text="#{form.user.label.name }+ ':'"></div>
-    <input type="text" th:field="*{name}" autocomplete="off">
-
-    <div th:text="#{form.user.label.surname} + ':'"></div>
-    <input type="text" th:field="*{surname}" autocomplete="off">
-
-    <div th:text="#{form.user.label.adres} + ':'"></div>
-    <input type="text" th:field="*{adres}" autocomplete="off">
-    
-    <div th:text="#{form.user.label.city} + ':'"></div>
-    <input type="text" th:field="*{city}" autocomplete="off">
-    
-    <div th:text="#{form.user.label.email} + ':'"></div>
-    <input type="text" th:field="*{email}" autocomplete="off">
-    
-    <div th:text="#{form.user.label.tel} + ':'"></div>
-    <input type="number" th:field="*{tel}" autocomplete="off">
-
-    <div th:text="#{form.user.label.country} + ':'"></div>
-    <input type="text" th:filed="*{country}" autocomplete="off">
-
-
-    <input type="submit" th:value="#{form.label.submit}">
+<div th:text="#{form.user.label.name} + ': '"></div> <div th:text="${user.name}"></div>
+<br>
+<div th:text="#{form.user.label.surname} + ': '"></div> <div th:text="${user.surname}"></div>
+<br>
+<div th:text="#{form.user.label.userId} + ': '"></div> <div th:text="${user.userId}"></div>
+<br>
+<form action="/order" method="get">
+    <input type="submit" th:value="#{form.label.redirect}"/>
 </form>
 
+
+<table>
+    <tr>
+        <th th:text="#{form.order.orderId}"></th>
+        <th th:text="#{form.order.orderData}"></th>
+    </tr>
+
+    <tr th:each="order : ${order}">
+        <th th:text="${order.orderData}"></th>
+        <th th:text="${order.orderId}"></th>
+    </tr>
+</table>
 </body>
 </html>

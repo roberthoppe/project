@@ -17,5 +17,5 @@ public class OrderPOJO {
 
     private UUID orderId;
     private Date orderData;
-    private List<ProductPOJO>productList;
+    //private List<ProductPOJO>productList;
 }

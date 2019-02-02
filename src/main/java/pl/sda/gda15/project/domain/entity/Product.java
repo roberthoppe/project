@@ -22,6 +22,7 @@ public class Product {
     private UUID id;
     private String productName;
     private Long quantity;
-    @ManyToOne
-    private Order order;
+    private Double price;
+//    @ManyToOne
+//    private Order order;
 }

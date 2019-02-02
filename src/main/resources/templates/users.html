@@ -2,11 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>User_result</title>
+    <title>Users</title>
 
 </head>
 <body>
-<div th:text="#{form.user.label.name} + ': '"></div> <div th:text="${users}"></div>
 <table>
     <tr>
         <th th:text="#{form.user.label.name}"></th>
@@ -27,7 +26,7 @@
         <th th:text="${user.tel}"></th>
         <th th:text="${user.email}"></th>
         <th>
-            <a th:href="@{'/user?id=' + ${user.userID}}" th:text="${user.userID}"></a>
+            <a th:href="@{'/user?id=' + ${user.userId}}" th:text="${user.userId}"></a>
         </th>
 
     </tr>

@@ -21,9 +21,8 @@ public class Order {
     private UUID orderId;
     private Date orderData;
 
-    @ManyToOne
-    private User user;
-    @OneToMany(mappedBy = "order")
-    private List<Product>productList;
+
+   // @OneToMany(mappedBy = "order")
+    //private List<Product>productList;
 
 }

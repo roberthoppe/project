@@ -13,7 +13,7 @@ import java.util.UUID;
 @Getter
 public class ProductPOJO {
     private UUID productId;
-
+    private Double price;
     private String productName;
     private Long quantity;
 }

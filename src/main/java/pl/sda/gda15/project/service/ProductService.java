@@ -14,28 +14,29 @@ import java.util.stream.Collectors;
 public class ProductService {
     private final ProductRepository productRepository;
     private final OrderService orderService;
+    private final UserService userService;
     @Lazy
     @Autowired
-    public ProductService(ProductRepository productRepository, OrderService orderService) {
+    public ProductService(ProductRepository productRepository, OrderService orderService, UserService userService) {
         this.productRepository = productRepository;
 
         this.orderService = orderService;
+        this.userService = userService;
     }
 
     public void save(ProductPOJO productPOJO) {
         productRepository.save(map(productPOJO));
     }
 
-    public List<ProductPOJO> allProducts() {
+    public List<ProductPOJO> productList() {
         return productRepository.findAll().stream().map(this::map).collect(Collectors.toList());
     }
 
     public Product map(ProductPOJO productPOJO) {
-        return new Product(productPOJO.getProductId(), productPOJO.getProductName(), productPOJO.getQuantity(),
-                orderService.map(orderService.getOrder(productPOJO.getProductId())));
+        return new Product(productPOJO.getProductId(), productPOJO.getProductName(), productPOJO.getQuantity(),productPOJO.getPrice());
     }
 
     public ProductPOJO map(Product product) {
-        return new ProductPOJO(product.getId(), product.getProductName(), product.getQuantity());
+        return new ProductPOJO(product.getId(), product.getPrice(), product.getProductName(), product.getQuantity());
     }
 }

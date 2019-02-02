@@ -2,23 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>result</title>
+    <title>Order</title>
 </head>
 <body>
-
 <table>
     <tr>
         <th th:text="#{form.product.productname}"></th>
+        <th th:text="#{form.product.productPrice}"></th>
         <th th:text="#{form.product.quantity}"></th>
-        <th th:text="#{form.product.productsId}"></th>
+        <th th:text="#{form.product.totaPprice}"></th>
     </tr>
-    <tr th:each=" product : ${products}">
-        <th th:text="${product.productName}"></th>
-        <th th:text="${product.quantity}"></th>
-        <th th:text="${product.productId}"></th>
+    <tr th:each="product : ${productList}">
 
+        <th th:text="${}"
     </tr>
 </table>
-
 </body>
 </html>

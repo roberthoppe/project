@@ -4,11 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Null;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,6 +19,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+
+
 public class User {
     @Id
     @GeneratedValue(generator = "UUID")
@@ -29,7 +34,7 @@ public class User {
     private String country;
     private String email;
     private Long tel;
-    @OneToMany(mappedBy = "user")
+    @OneToMany
     private List<Order>orderList;
 
 
