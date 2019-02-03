@@ -13,9 +13,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class OrderPOJO {
+public class OrderPOJO{
 
     private UUID orderId;
     private Date orderData;
-    //private List<ProductPOJO>productList;
+
 }

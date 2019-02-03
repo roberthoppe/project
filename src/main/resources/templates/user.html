@@ -11,8 +11,8 @@
 <br>
 <div th:text="#{form.user.label.userId} + ': '"></div> <div th:text="${user.userId}"></div>
 <br>
-<form action="/order" method="get">
-    <input type="submit" th:value="#{form.label.redirect}"/>
+<form action="/product_list" method="get">
+    <input type="submit" th:value="Lista"/>
 </form>
 
 
@@ -23,7 +23,6 @@
     </tr>
 
     <tr th:each="order : ${order}">
-        <th th:text="${order.orderData}"></th>
         <th th:text="${order.orderId}"></th>
     </tr>
 </table>

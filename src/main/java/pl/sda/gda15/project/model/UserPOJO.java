@@ -24,6 +24,5 @@ public class UserPOJO {
     private String country;
     private String email;
     private Long tel;
-    private List<OrderPOJO> orderList;
 
 }

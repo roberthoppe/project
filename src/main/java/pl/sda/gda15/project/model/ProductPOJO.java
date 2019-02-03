@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pl.sda.gda15.project.domain.entity.Product;
 
 import java.util.UUID;
 
@@ -16,4 +17,6 @@ public class ProductPOJO {
     private Double price;
     private String productName;
     private Long quantity;
+
+
 }

@@ -38,13 +38,13 @@ public class UserService {
 
     public User map(UserPOJO userPOJO) {
         User user = new User(userPOJO.getUserId(), userPOJO.getName(), userPOJO.getSurname(), userPOJO.getAdres(), userPOJO.getCity(),
-                userPOJO.getCountry(), userPOJO.getEmail(), userPOJO.getTel(), Collections.emptyList());
+                userPOJO.getCountry(), userPOJO.getEmail(), userPOJO.getTel());
         return user;
     }
 
     public UserPOJO map(User user) {
         UserPOJO userPOJO = new UserPOJO(user.getUserId(), user.getName(), user.getSurname(), user.getAdres(), user.getCity(),
-                user.getCountry(), user.getEmail(), user.getTel(), Collections.emptyList());
+                user.getCountry(), user.getEmail(), user.getTel());
         return userPOJO;
     }
 

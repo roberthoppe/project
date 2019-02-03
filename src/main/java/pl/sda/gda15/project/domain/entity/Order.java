@@ -14,6 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+//@Table(name = "order")
 public class Order {
     @Id
     @GeneratedValue(generator = "UUID")
@@ -21,8 +22,5 @@ public class Order {
     private UUID orderId;
     private Date orderData;
 
-
-   // @OneToMany(mappedBy = "order")
-    //private List<Product>productList;
 
 }

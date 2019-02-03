@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import pl.sda.gda15.project.model.ProductPOJO;
 import pl.sda.gda15.project.model.UserPOJO;
 import pl.sda.gda15.project.service.OrderService;
 import pl.sda.gda15.project.service.ProductService;
@@ -49,7 +50,7 @@ public class UserController {
     public String userInfo(Model model,@RequestParam("id") UUID userId){
         UserPOJO userPOJO = userService.userList(userId);
         model.addAttribute("user", userPOJO);
-        model.addAttribute("order",userPOJO.getOrderList());
+      //  model.addAttribute("order",userPOJO.getOrderList());
         return "user";
     }
 
