@@ -10,6 +10,7 @@
         <th th:text="#{form.product.productname}"></th>
         <th th:text="#{form.product.productPrice}"></th>
         <th th:text="#{form.product.quantity}"></th>
+        <th th:text="#{form.product.productsId}"></th>
         <th th:text="#{form.product.totaPprice}"></th>
     </tr>
     <tr th:each="product : ${productList}">
@@ -17,6 +18,7 @@
         <th th:text="${product.productName}"></th>
         <th th:text="${product.price}"></th>
         <th th:text="${product.quantity}"></th>
+        <th th:text="${product.productId}"></th>
     </tr>
 </table>
 </body>
