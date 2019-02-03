@@ -18,12 +18,12 @@
 
 <table>
     <tr>
-        <th th:text="#{form.order.orderId}"></th>
-        <th th:text="#{form.order.orderData}"></th>
+        <th th:text="#{form.basket.orderId}"></th>
+        <th th:text="#{form.basket.orderData}"></th>
     </tr>
 
-    <tr th:each="order : ${order}">
-        <th th:text="${order.orderId}"></th>
+    <tr th:each="orders : ${orders}">
+        <th th:text="${orders}"></th>
     </tr>
 </table>
 </body>

@@ -6,16 +6,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class OrderPOJO{
-
+public class BasketPOJO {
     private UUID orderId;
-    private Date orderData;
-
+    private String OrderName;
+   // private Date orderDate;
 }

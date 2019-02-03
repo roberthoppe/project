@@ -38,7 +38,7 @@ public class ProductController {
     @GetMapping("/product")
     public String productInfo(Model model,@RequestParam("id") UUID productId){
         ProductPOJO productPOJO = productService.productList(productId);
-        model.addAttribute("productInfo",productPOJO);
+        model.addAttribute("product",productPOJO);
         return "product";
     }
 

@@ -20,9 +20,7 @@
         <th th:text="${product.price}"></th>
         <th th:text="${product.quantity}"></th>
         <th>
-            <form th:action="@{/add}" method="post">
-                <input type="submit" >
-            </form>
+            <a th:href="@{'/product?id=' + ${product.getProductId()}}" th:text="kup"></a>
         </th>
 
     </tr>

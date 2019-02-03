@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order</title>
+</head>
+<body>
+<form th:action="@{/new_order}" th:object="${newOrder}" method="post">
+
+    <div th:text="#{form.basket.orderName}+ ':'"></div>    <input type="text" th:field="*{orderName}" autocomplete="off">
+
+    <!--<div th:text="#{form.product.quantity}+ ':'"></div>    <input type="text" th:field="*{quantity}" autocomplete="off">-->
+
+    <!--<div th:text="#{form.product.productPrice}+ ':'"></div>    <input type="text" th:field="*{price}" autocomplete="off">-->
+
+    <input type="submit" th:value="#{form.label.submit}">
+
+</form>
+
+</body>
+</html>

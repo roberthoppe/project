@@ -17,7 +17,7 @@ public class Product{
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    private UUID ProductId;
+    private UUID productId;
     private String productName;
     private Long quantity;
     private Double price;

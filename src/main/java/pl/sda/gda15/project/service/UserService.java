@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.sda.gda15.project.domain.entity.User;
 import pl.sda.gda15.project.domain.repository.UserRepository;
-import pl.sda.gda15.project.model.OrderPOJO;
 import pl.sda.gda15.project.model.UserPOJO;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -15,12 +13,10 @@ import java.util.stream.Collectors;
 @Service
 public class UserService {
     private final UserRepository userRepository;
-    private final OrderService orderService;
 
     @Autowired
-    public UserService(UserRepository userRepository, OrderService orderService) {
+    public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.orderService = orderService;
     }
 
 

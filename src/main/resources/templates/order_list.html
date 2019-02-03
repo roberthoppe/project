@@ -6,13 +6,19 @@
 </head>
 <body>
 <table>
+
     <tr>
-        <th th:text="#{form.order.orderId}"></th>
+        <th th:text="#{form.basket.orderId}"></th>
+        <th th:text="#{form.basket.orderData}"></th>
+        <th th:text="#{form.basket.orderName}"></th>
     </tr>
 
-    <tr th:each="order : ${order_list}">
+    <tr th:each="basket : ${orders}">
 
-        <th th:text="${order.orderId}"></th>
+        <th th:text="${basket.orderId}"></th>
+        <th th:text="${basket.orderName}"></th>
+        <!--<th th:text="${basket.getOrderDate}"></th>-->
+
 
     </tr>
 </table>

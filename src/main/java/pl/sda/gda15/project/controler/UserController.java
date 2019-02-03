@@ -6,9 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import pl.sda.gda15.project.model.ProductPOJO;
 import pl.sda.gda15.project.model.UserPOJO;
-import pl.sda.gda15.project.service.OrderService;
 import pl.sda.gda15.project.service.ProductService;
 import pl.sda.gda15.project.service.UserService;
 
@@ -18,14 +16,12 @@ import java.util.UUID;
 @Controller
 public class UserController {
     private final UserService userService;
-    private final OrderService orderService;
     private  final ProductService productService;
 
 
 @Autowired
-    public UserController(UserService userService, OrderService orderService, ProductService productService) {
+    public UserController(UserService userService, ProductService productService) {
         this.userService = userService;
-    this.orderService = orderService;
     this.productService = productService;
 }
 
@@ -50,7 +46,6 @@ public class UserController {
     public String userInfo(Model model,@RequestParam("id") UUID userId){
         UserPOJO userPOJO = userService.userList(userId);
         model.addAttribute("user", userPOJO);
-      //  model.addAttribute("order",userPOJO.getOrderList());
         return "user";
     }
 
