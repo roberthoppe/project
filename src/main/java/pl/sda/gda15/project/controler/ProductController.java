@@ -16,11 +16,15 @@ public class ProductController {
         this.productService = productService;
     }
 
-
-    @GetMapping("order")
-    public String productList(Model model){
-        model.addAttribute("productList",productService.productList());
-        return "order";
+    @PostMapping("/new")
+    public String post(ProductPOJO productPOJO){
+    productService.save(productPOJO);
+    return "redirect:/newProuct";
+    }
+    @GetMapping("/newProduct")
+    public String news(Model model){
+    model.addAttribute("new",new ProductPOJO());
+    return "newProduct";
     }
 
 }

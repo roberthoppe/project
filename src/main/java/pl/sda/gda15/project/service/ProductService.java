@@ -37,6 +37,6 @@ public class ProductService {
     }
 
     public ProductPOJO map(Product product) {
-        return new ProductPOJO(product.getId(), product.getPrice(), product.getProductName(), product.getQuantity());
+        return new ProductPOJO(product.getProductId(), product.getPrice(), product.getProductName(), product.getQuantity());
     }
 }
