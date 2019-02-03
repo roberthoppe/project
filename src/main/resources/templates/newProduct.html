@@ -5,16 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<form th:action="@{/newProduct}" th:object="${new}" method="post">
+<form th:action="@{/new}" th:object="${newProduct}" method="post">
 
-    <div th:text="#{form.product.productname}+ ':'"></div>
-    <input type="text" th:field="*{productName}" autocomplete="off">
+    <div th:text="#{form.product.productname}+ ':'"></div>    <input type="text" th:field="*{productName}" autocomplete="off">
 
-    <div th:text="#{form.product.quantity}+ ':'"></div>
-    <input type="text" th:field="*{quantity}" autocomplete="off">
+    <div th:text="#{form.product.quantity}+ ':'"></div>    <input type="text" th:field="*{quantity}" autocomplete="off">
 
-    <div th:text="#{form.product.productPrice}+ ':'"></div>
-    <input type="text" th:field="*{price}" autocomplete="off">
+    <div th:text="#{form.product.productPrice}+ ':'"></div>    <input type="text" th:field="*{price}" autocomplete="off">
+
+    <input type="submit" th:value="#{form.label.submit}">
 
 </form>
 </body>

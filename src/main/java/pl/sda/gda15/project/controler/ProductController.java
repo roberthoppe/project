@@ -19,11 +19,11 @@ public class ProductController {
     @PostMapping("/new")
     public String post(ProductPOJO productPOJO){
     productService.save(productPOJO);
-    return "redirect:/newProuct";
+    return "redirect:/newProduct";
     }
     @GetMapping("/newProduct")
     public String news(Model model){
-    model.addAttribute("new",new ProductPOJO());
+    model.addAttribute("newProduct",new ProductPOJO());
     return "newProduct";
     }
 

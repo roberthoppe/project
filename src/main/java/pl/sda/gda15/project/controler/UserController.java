@@ -18,12 +18,14 @@ import java.util.UUID;
 public class UserController {
     private final UserService userService;
     private final OrderService orderService;
+    private  final ProductService productService;
 
 
 @Autowired
-    public UserController(UserService userService, OrderService orderService) {
+    public UserController(UserService userService, OrderService orderService, ProductService productService) {
         this.userService = userService;
     this.orderService = orderService;
+    this.productService = productService;
 }
 
     @PostMapping("/create")
